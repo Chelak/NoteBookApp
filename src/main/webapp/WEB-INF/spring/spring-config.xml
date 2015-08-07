@@ -11,20 +11,19 @@
 
     <mvc:annotation-driven />
 
-    <bean id="dataSource"
-          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <!-- Data source-->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://37.140.192.67:3306/u0072197_note" />
         <property name="username" value="u0072197_usernot" />
         <property name="password" value="cc5aUMFZ" />
     </bean>
-
-    <bean id="sessionFactory"
-          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+<!-- Sesion factory init and set hibernate propriety's-->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <property name="annotatedClasses">
+        <property name="packagesToScan">
             <list>
-                <value>com.springapp.mvc.model.Content</value>
+                <value>com.springapp.mvc.model</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -34,16 +33,16 @@
             </props>
         </property>
     </bean>
-
-    <bean id="txManager"
-          class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+<!-- transaction manager -->
+    <bean id="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
 
     <bean id="persistenceExceptionTranslationPostProcessor" class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 
-    <bean
-            class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+
+   <!-- indicate view servlet   -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">
             <value>/WEB-INF/pages/</value>
         </property>
@@ -52,7 +51,7 @@
         </property>
     </bean>
 
-
+<!-- init contentdao and contentservice-->
     <bean id="dataDaoImpl" class="com.springapp.mvc.dao.ContentDaoImpl" />
     <bean id="dataServiceImpl" class="com.springapp.mvc.services.ContentServiceImpl" />
 
