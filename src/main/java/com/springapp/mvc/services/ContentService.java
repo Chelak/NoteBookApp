@@ -15,7 +15,7 @@ public interface ContentService
 
     public Content getRowById(int id);
 
-    public void updateRow(Content content);
+    public void updateRow(Content content, int id);
 
     public void deleteRow(int id);
 }

@@ -30,8 +30,8 @@ public class ContentServiceImpl implements ContentService {
     }
 
     @Override
-    public void updateRow(Content content) {
-        contentDAO.updateRow(content);
+    public void updateRow(Content content, int id) {
+        contentDAO.updateRow(content, id);
     }
 
     @Override

@@ -42,22 +42,38 @@ public class ContentDaoImpl implements ContentDAO {
     }
 
     @Override
-    public void updateRow(Content content) {
-        Session session = sessionFactory.openSession();
-        Transaction tx = session.beginTransaction();
-        session.saveOrUpdate(content);
-        tx.commit();
-        session.close();
+    public void updateRow(Content content, int id )
+    {
+        Content contentToUpdate = getRowById(id);
+
+        if (contentToUpdate != null)
+        {
+            contentToUpdate.setTitle(content.getTitle());
+            contentToUpdate.setContent(content.getContent());
+            Session session = sessionFactory.openSession();
+            Transaction tx = session.beginTransaction();
+            session.saveOrUpdate(contentToUpdate);
+            tx.commit();
+            session.close();
+
+        }
+
 
     }
 
     @Override
     public void deleteRow(int id) {
-        Session session = sessionFactory.openSession();
-        Transaction tx = session.beginTransaction();
-        Content content = (Content) session.load(Content.class, id);
-        session.delete(content);
-        tx.commit();
-        session.close();
+
+        Content contentToDelete = getRowById(id);
+
+        if (contentToDelete != null)
+        {
+            Session session = sessionFactory.openSession();
+            Transaction tx = session.beginTransaction();
+            session.delete(contentToDelete);
+            tx.commit();
+            session.close();
+        }
+
     }
 }
