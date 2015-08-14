@@ -7,7 +7,7 @@
     <title>Being Java Guys | User Details</title>
 </head>
 <body>
-<center>
+<div align="center">
 
     <div style="color: teal; font-size: 30px"> Content List</div>
 
@@ -39,7 +39,7 @@
     </c:if>
 
 
-    <a href="hello">Click Here to add new Content</a>
-</center>
+    <a href="home">Click Here to add new Content</a>
+</div>
 </body>
 </html>

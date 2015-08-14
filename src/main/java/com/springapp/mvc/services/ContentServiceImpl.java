@@ -1,7 +1,7 @@
 package com.springapp.mvc.services;
 
 import com.springapp.mvc.dao.ContentDAO;
-import com.springapp.mvc.model.Content;
+import com.springapp.mvc.domain.Content;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.List;
 public class ContentServiceImpl implements ContentService {
 
     @Autowired
-    ContentDAO contentDAO;
+    ContentDAO contentDAO ;
 
     @Override
     public void insertRow(Content content) {

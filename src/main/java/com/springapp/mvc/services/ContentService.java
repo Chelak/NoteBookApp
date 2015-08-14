@@ -1,6 +1,6 @@
 package com.springapp.mvc.services;
 
-import com.springapp.mvc.model.Content;
+import com.springapp.mvc.domain.Content;
 
 import java.util.List;
 
