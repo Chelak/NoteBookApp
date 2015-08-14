@@ -54,5 +54,7 @@
 <!-- init contentdao and contentservice-->
     <bean id="contentDAO" class="com.springapp.mvc.dao.ContentDaoImpl" />
     <bean id="contentService" class="com.springapp.mvc.services.ContentServiceImpl" />
-
+    <!-- init userdao and userservice -->
+    <bean id="userDAO" class="com.springapp.mvc.dao.UserDaoImpl"/>
+    <bean id="userService" class="com.springapp.mvc.services.ContentServiceImpl"/>
 </beans>
