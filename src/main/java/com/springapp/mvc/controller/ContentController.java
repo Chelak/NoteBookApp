@@ -25,7 +25,7 @@ public class ContentController {
         Content content = new Content();
         content.setTitle(title);
         content.setContent(text);
-        contentService.updateRow(content);
+        contentService.insertRow(content);
         model.addAttribute("message", "Content added!");
         return "home";
     }
@@ -49,14 +49,14 @@ public class ContentController {
         return "contentlist";
     }
 
-    /**
-     *  Method which test jstl form
-     */
+
+    //  Method which test jstl form
+
 
     @RequestMapping(value = "jstlAdd", method = RequestMethod.POST)
     public String addJstlContent(@ModelAttribute("SpringWeb") Content content)
     {
-        contentService.updateRow(content);
+        contentService.insertRow(content);
 
         return "home";
     }
