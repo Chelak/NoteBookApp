@@ -9,17 +9,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title></title>
+  <title></title>
 </head>
 <body>
 <h1>${message}</h1>
 
 <div align="center">
-  <form:form action="jstlAdd" method="post">
-    <p>Title <form:input path="title"/></p>
-    <p>Text <form:input path="content"/></p>
-    <p><input type="submit" value="Add Content"/></p>
-  </form:form>
+  <form action="adduser" method="post">
+    <input type="text" name="name" placeholder="Name">
+    <input type="text" name="password" placeholder="Password">
+    <input type="submit" value="Add User">
+  </form>
 </div>
 </body>
 </html>
