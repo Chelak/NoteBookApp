@@ -12,6 +12,7 @@ import java.util.List;
 public class ContentServiceImpl implements ContentService {
 
     @Autowired
+    // @Qualifier("contentDAO")
     ContentDAO contentDAO ;
 
     @Override

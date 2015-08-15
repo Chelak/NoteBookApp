@@ -16,7 +16,10 @@ import java.util.List;
  */
 @Controller
 public class ContentController {
+
+
     @Autowired
+    // @Qualifier("contentService")
     ContentService contentService;
 
     @RequestMapping(value = "addcontent", method = RequestMethod.POST)
@@ -50,7 +53,7 @@ public class ContentController {
     }
 
 
-    //  Method which test jstl form
+    /*  Method which test jstl form
 
 
     @RequestMapping(value = "jstlAdd", method = RequestMethod.POST)
@@ -60,4 +63,5 @@ public class ContentController {
 
         return "home";
     }
+    */
 }

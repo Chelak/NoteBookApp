@@ -7,7 +7,7 @@
       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
-    <context:component-scan base-package="com.springapp.mvc.controller" />
+    <context:component-scan base-package="com.notebook.app.controller" />
 
     <mvc:annotation-driven />
 
@@ -23,7 +23,7 @@
         <property name="dataSource" ref="dataSource" />
         <property name="packagesToScan">
             <list>
-                <value>com.springapp.mvc.domain</value>
+                <value>com.notebook.app.domain</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -51,10 +51,27 @@
         </property>
     </bean>
 
-<!-- init contentdao and contentservice-->
+<!-- init contentdao and contentservice
+    <bean class="com.springapp.mvc.dao.ContentDaoImpl">
+    <qualifier value="contentDAO"/>
+    </bean>
+       <bean class="com.springapp.mvc.services.ContentServiceImpl">
+           <qualifier value="contentService"/>
+       </bean>
+       -->
     <bean id="contentDAO" class="com.notebook.app.dao.ContentDaoImpl" />
     <bean id="contentService" class="com.notebook.app.services.ContentServiceImpl" />
-    <!-- init userdao and userservice -->
+
+
+    <!--  init userdao and userservice
+    <bean class="com.springapp.mvc.dao.UserDaoImpl">
+       <qualifier value="userDAO"/>
+    </bean>
+    <bean class="com.springapp.mvc.services.ContentServiceImpl">
+        <qualifier value="userService" />
+    </bean>
+    -->
     <bean id="userDAO" class="com.notebook.app.dao.UserDaoImpl"/>
-    <bean id="userService" class="com.notebook.app.services.ContentServiceImpl"/>
+    <bean id="userService" class="com.notebook.app.services.UserServiceImpl"/>
+    <!-- djn z kjifhf  -->
 </beans>

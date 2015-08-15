@@ -22,6 +22,6 @@ public class HomeController
 	public String formPage(ModelMap model)
 	{
 		model.addAttribute("message", "Form page");
-		return "form";
+		return "user-form";
 	}
 }
