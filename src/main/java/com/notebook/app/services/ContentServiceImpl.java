@@ -1,7 +1,7 @@
-package com.springapp.mvc.services;
+package com.notebook.app.services;
 
-import com.springapp.mvc.dao.ContentDAO;
-import com.springapp.mvc.domain.Content;
+import com.notebook.app.dao.ContentDAO;
+import com.notebook.app.domain.Content;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;

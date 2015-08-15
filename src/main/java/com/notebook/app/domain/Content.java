@@ -1,4 +1,4 @@
-package com.springapp.mvc.domain;
+package com.notebook.app.domain;
 
 import javax.persistence.*;
 

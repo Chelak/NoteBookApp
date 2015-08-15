@@ -1,7 +1,7 @@
-package com.springapp.mvc.controller;
+package com.notebook.app.controller;
 
-import com.springapp.mvc.domain.Content;
-import com.springapp.mvc.services.ContentService;
+import com.notebook.app.domain.Content;
+import com.notebook.app.services.ContentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -52,9 +52,9 @@
     </bean>
 
 <!-- init contentdao and contentservice-->
-    <bean id="contentDAO" class="com.springapp.mvc.dao.ContentDaoImpl" />
-    <bean id="contentService" class="com.springapp.mvc.services.ContentServiceImpl" />
+    <bean id="contentDAO" class="com.notebook.app.dao.ContentDaoImpl" />
+    <bean id="contentService" class="com.notebook.app.services.ContentServiceImpl" />
     <!-- init userdao and userservice -->
-    <bean id="userDAO" class="com.springapp.mvc.dao.UserDaoImpl"/>
-    <bean id="userService" class="com.springapp.mvc.services.ContentServiceImpl"/>
+    <bean id="userDAO" class="com.notebook.app.dao.UserDaoImpl"/>
+    <bean id="userService" class="com.notebook.app.services.ContentServiceImpl"/>
 </beans>

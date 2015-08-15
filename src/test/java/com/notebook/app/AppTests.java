@@ -1,4 +1,4 @@
-package com.springapp.mvc;
+package com.notebook.app;
 
 import org.junit.Before;
 import org.junit.Test;

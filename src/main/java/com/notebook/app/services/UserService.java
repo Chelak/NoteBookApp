@@ -1,6 +1,6 @@
-package com.springapp.mvc.services;
+package com.notebook.app.services;
 
-import com.springapp.mvc.domain.User;
+import com.notebook.app.domain.User;
 
 import java.util.List;
 

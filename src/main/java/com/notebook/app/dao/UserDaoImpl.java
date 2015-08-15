@@ -1,6 +1,6 @@
-package com.springapp.mvc.dao;
+package com.notebook.app.dao;
 
-import com.springapp.mvc.domain.User;
+import com.notebook.app.domain.User;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 

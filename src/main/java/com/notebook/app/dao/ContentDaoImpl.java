@@ -1,6 +1,6 @@
-package com.springapp.mvc.dao;
+package com.notebook.app.dao;
 
-import com.springapp.mvc.domain.Content;
+import com.notebook.app.domain.Content;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

@@ -1,13 +1,13 @@
-package com.springapp.mvc.dao;
+package com.notebook.app.services;
 
-import com.springapp.mvc.domain.Content;
+import com.notebook.app.domain.Content;
 
 import java.util.List;
 
 /**
  * Created by user on 7/21/2015.
  */
-public interface ContentDAO
+public interface ContentService
 {
     public void insertRow(Content content);
 
