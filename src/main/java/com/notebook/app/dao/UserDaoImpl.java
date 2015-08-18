@@ -1,7 +1,9 @@
 package com.notebook.app.dao;
 
 import com.notebook.app.domain.User;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -16,34 +18,34 @@ public class UserDaoImpl implements UserDAO {
     @Autowired
     SessionFactory sessionFactory;
 
-    public void setSessionFactory(SessionFactory sessionFactory)
-    {
-        this.sessionFactory = sessionFactory;
-    }
-    public SessionFactory getSessionFactory()
-    {
-        return sessionFactory;
-    }
-
-
-
-    @Override
+        @Override
     public void insertRow(User user)
     {
-        sessionFactory.getCurrentSession().save(user);
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        session.save(user);
+        transaction.commit();
+        session.close();
+
     }
 
 
     @Override
     public List<User> getList()
     {
-        return  sessionFactory.getCurrentSession().createCriteria("from User").list();
+        Session session = sessionFactory.openSession();
+        List<User> userList = session.createQuery("from User").list();
+        session.close();
+        return userList;
+
+
     }
 
     @Override
     public User getRowById(int id)
     {
-        return (User) sessionFactory.getCurrentSession().load(User.class, id);
+        Session session = sessionFactory.openSession();
+        return (User) session.load(User.class, id);
     }
 
     @Override
@@ -54,7 +56,11 @@ public class UserDaoImpl implements UserDAO {
         {
             userToUpdate.setName(user.getName());
             userToUpdate.setPassword(user.getPassword());
-            sessionFactory.getCurrentSession().update(userToUpdate);
+            Session session = sessionFactory.openSession();
+            Transaction tx = session.beginTransaction();
+            session.update(userToUpdate);
+            tx.commit();
+            session.close();
         }
     }
 
@@ -64,7 +70,13 @@ public class UserDaoImpl implements UserDAO {
       User userToDelete = getRowById(id);
         if (userToDelete !=null)
         {
-            sessionFactory.getCurrentSession().delete(userToDelete);
+
+            Session session = sessionFactory.openSession();
+            Transaction tx = session.beginTransaction();
+            session.delete(userToDelete);
+            tx.commit();
+            session.close();
+
         }
     }
 }

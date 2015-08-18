@@ -1,4 +1,4 @@
-package com.springapp.mvc.controller;
+package com.notebook.app.controller;
 
 import com.notebook.app.domain.User;
 import com.notebook.app.services.UserService;
@@ -17,7 +17,7 @@ import java.util.List;
  * Created by user on 8/14/2015.
  */
 @Controller
-@RequestMapping()
+
 public class UserController
 {
 
@@ -25,7 +25,7 @@ public class UserController
  //@Qualifier("userService")
     UserService userService;
 
-    @RequestMapping(value = "/user" ,method = RequestMethod.GET)
+    @RequestMapping(value = "users" ,method = RequestMethod.GET)
     public ModelAndView getUserList()
     {
         List userList = userService.getList();
