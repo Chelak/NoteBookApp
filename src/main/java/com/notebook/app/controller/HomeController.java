@@ -15,7 +15,7 @@ public class HomeController
 	public String printWelcome(ModelMap model)
 	{
 		model.addAttribute("message", "Hello world!");
-		return "home";
+		return "index";
 	}
 
 	@RequestMapping(value = "form", method = RequestMethod.GET )
